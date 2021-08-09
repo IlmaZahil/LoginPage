@@ -14,7 +14,7 @@ class SignInScreen extends StatelessWidget {
                 Colors.black.withOpacity(0.3), BlendMode.srcATop),
           ),
           Image.asset(
-            "images/signup.png",
+            "images/signin.png",
             fit: BoxFit.cover,
           ),
           SafeArea(
@@ -62,7 +62,7 @@ class SignInScreen extends StatelessWidget {
                           child: Row(
                             children: [
                               Text(
-                                "New\nAccount",
+                                "Hello\nIlma Zahil",
                                 style: TextStyle(
                                   fontSize: 25,
                                   color: Colors.black,
@@ -73,21 +73,11 @@ class SignInScreen extends StatelessWidget {
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Container(
-                                    height: 60,
-                                    width: 60,
-                                    child: Center(
-                                      child: Icon(Icons.camera_alt_outlined),
-                                    ),
-                                    decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        border:
-                                            Border.all(color: Colors.black)),
+                                  CircleAvatar(
+                                    radius: 40,
+                                    backgroundImage:
+                                        AssetImage("images/prof.png"),
                                   ),
-                                  SizedBox(
-                                    height: 20,
-                                  ),
-                                  Text("Upload Pictures"),
                                 ],
                               ),
                             ],
