@@ -96,11 +96,12 @@ class CustomButton extends StatelessWidget {
   final Color txtColor;
   final Function onPressed;
 
-  CustomButton(
-      {required this.label,
-      required this.btnColor,
-      required this.txtColor,
-      required this.onPressed});
+  CustomButton({
+    required this.label,
+    required this.btnColor,
+    required this.txtColor,
+    required this.onPressed,
+  });
 
   @override
   Widget build(BuildContext context) {
