@@ -33,7 +33,7 @@ class SignInScreen extends StatelessWidget {
                   width: 80,
                   child: Icon(
                     Icons.image,
-                    color: Colors.black,
+                    color: Colors.brown.withOpacity(0.5),
                     size: 40,
                   ),
                 ),
@@ -43,13 +43,16 @@ class SignInScreen extends StatelessWidget {
                     left: 30,
                   ),
                   child: Text(
-                    "WELCOME \nEVERYONE!",
+                    "WELCOME TO \nPHOTOBOOTH!",
                     style: TextStyle(
                         fontSize: 35,
                         color: Colors.white,
                         letterSpacing: 1.5,
                         fontWeight: FontWeight.w600),
                   ),
+                ),
+                SizedBox(
+                  height: 50,
                 ),
                 Expanded(
                   child: Container(
@@ -83,43 +86,67 @@ class SignInScreen extends StatelessWidget {
                             ],
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            left: 30,
-                            top: 20,
-                          ),
-                          child: Text("Email"),
-                        ),
-                        CustomTextField(
-                            label: "ilmazahil7@gmail.com",
-                            prefixIcon: Icons.email),
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            left: 30,
-                            top: 20,
-                          ),
-                          child: Text("UserName"),
-                        ),
-                        CustomTextField(
-                            label: "Ilma Zahil", prefixIcon: Icons.person),
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            left: 30,
-                            top: 20,
-                          ),
-                          child: Text("Password"),
+                        SizedBox(
+                          height: 30,
                         ),
                         CustomTextField(
                             label: "*********", prefixIcon: Icons.lock),
+                        Align(
+                          alignment: Alignment.bottomRight,
+                          child: Padding(
+                            padding: const EdgeInsets.only(right: 30.0),
+                            child: Text(
+                              "Forget Password?",
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.brown.withOpacity(0.5),
+                              ),
+                            ),
+                          ),
+                        ),
                         SizedBox(
-                          height: 50,
+                          height: 20,
                         ),
                         CustomButton(
-                          label: "Sign Up",
+                          label: "Sign In",
                           btnColor: Colors.brown.withOpacity(0.5),
                           txtColor: Colors.white,
-                          onPressed: () {},
+                          onPresed: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => MainScreen()));
+                          },
                         ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Center(
+                          child: Text(
+                            "or Sign In with",
+                            style: TextStyle(fontSize: 16, color: Colors.black),
+                          ),
+                        ),
+                        Container(
+                            margin: EdgeInsets.only(top: 15),
+                            height: 100,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  "images/gmail.png",
+                                  height: 50,
+                                ),
+                                SizedBox(width: 30),
+                                Image.asset(
+                                  "images/fb.png",
+                                  height: 50,
+                                ),
+                                SizedBox(width: 30),
+                                Image.asset(
+                                  "images/twitter.png",
+                                  height: 50,
+                                ),
+                              ],
+                            ))
                       ],
                     ),
                     margin: EdgeInsets.only(top: 20),
@@ -157,13 +184,6 @@ class CustomTextField extends StatelessWidget {
               SizedBox(width: 10),
               Text(label)
             ],
-            // decoration: InputDecoration(
-            //     prefixIcon: Icon(
-            //       prefixIcon,
-            //       color: Colors.black,
-            //     ),
-            //     hintText: label,
-            //     hintStyle: TextStyle(fontSize: 16, color: Colors.black)),
           ),
           SizedBox(
             height: 5,

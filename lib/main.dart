@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: SignInScreen(),
+      home: MainScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
@@ -59,7 +59,7 @@ class MainScreen extends StatelessWidget {
                     left: 30,
                   ),
                   child: Text(
-                    "WELCOME \nEVERYONE!",
+                    "WELCOME TO \nPHOTOBOOTH!",
                     style: TextStyle(
                         fontSize: 35,
                         color: Colors.white,
@@ -72,12 +72,18 @@ class MainScreen extends StatelessWidget {
                     label: "Sign Up",
                     btnColor: Colors.pinkAccent,
                     txtColor: Colors.white,
-                    onPressed: () {}),
+                    onPresed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => SignUpScreen()));
+                    }),
                 CustomButton(
                     label: "Sign In",
                     btnColor: Colors.white,
                     txtColor: Colors.pinkAccent,
-                    onPressed: () {}),
+                    onPresed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => SignInScreen()));
+                    }),
                 SizedBox(
                   height: 80,
                 ),
@@ -94,20 +100,20 @@ class CustomButton extends StatelessWidget {
   final String label;
   final Color btnColor;
   final Color txtColor;
-  final Function onPressed;
+  final VoidCallback onPresed;
 
   CustomButton({
     required this.label,
     required this.btnColor,
     required this.txtColor,
-    required this.onPressed,
+    required this.onPresed,
   });
 
   @override
   Widget build(BuildContext context) {
     return CupertinoButton(
       padding: EdgeInsets.zero,
-      onPressed: () {},
+      onPressed: onPresed,
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: 45, vertical: 15),
         height: 55,

@@ -33,7 +33,7 @@ class SignUpScreen extends StatelessWidget {
                   width: 80,
                   child: Icon(
                     Icons.image,
-                    color: Colors.black,
+                    color: Colors.brown.withOpacity(0.5),
                     size: 40,
                   ),
                 ),
@@ -43,13 +43,16 @@ class SignUpScreen extends StatelessWidget {
                     left: 30,
                   ),
                   child: Text(
-                    "WELCOME \nEVERYONE!",
+                    "WELCOME TO \nPHOTOBOOTH!",
                     style: TextStyle(
                         fontSize: 35,
                         color: Colors.white,
                         letterSpacing: 1.5,
                         fontWeight: FontWeight.w600),
                   ),
+                ),
+                SizedBox(
+                  height: 50,
                 ),
                 Expanded(
                   child: Container(
@@ -71,7 +74,7 @@ class SignUpScreen extends StatelessWidget {
                               ),
                               Spacer(),
                               Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
+                                // crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Container(
                                     height: 60,
@@ -85,7 +88,7 @@ class SignUpScreen extends StatelessWidget {
                                             Border.all(color: Colors.black)),
                                   ),
                                   SizedBox(
-                                    height: 20,
+                                    height: 10,
                                   ),
                                   Text("Upload Pictures"),
                                 ],
@@ -122,13 +125,16 @@ class SignUpScreen extends StatelessWidget {
                         CustomTextField(
                             label: "*********", prefixIcon: Icons.lock),
                         SizedBox(
-                          height: 50,
+                          height: 20,
                         ),
                         CustomButton(
                           label: "Sign Up",
                           btnColor: Colors.brown.withOpacity(0.5),
                           txtColor: Colors.white,
-                          onPressed: () {},
+                          onPresed: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => MainScreen()));
+                          },
                         ),
                       ],
                     ),
